@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VPN Subscription</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    Telegram.WebApp.ready(); // Инициализация Telegram Web Apps API
+
+    function buyItem(itemName, itemPrice) {
+      // Отправка данных о выбранном товаре в Telegram Bot
+      Telegram.WebApp.sendData(JSON.stringify({
+        itemName: itemName,
+        itemPrice: itemPrice
+      }));
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>VPN Subscription</h1>
+    <p>Select your subscription:</p>
+    <div class="product">
+      <h2>VPN Week</h2>
+      <p>7 days of VPN access</p>
+      <button onclick="buyItem('VPN Week', 100)">Buy for 100 Stars</button>
+    </div>
+    <div class="product">
+      <h2>VPN Month</h2>
+      <p>30 days of VPN access</p>
+      <button onclick="buyItem('VPN Month', 300)">Buy for 300 Stars</button>
+    </div>
+    <div class="product">
+      <h2>VPN Year</h2>
+      <p>365 days of VPN access</p>
+      <button onclick="buyItem('VPN Year', 3000)">Buy for 3000 Stars</button>
+    </div>
+  </div>
+</body>
+</html>
